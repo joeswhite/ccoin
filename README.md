@@ -1,51 +1,81 @@
-CCoin
-=======
-CCoin is a decentralized trustless digital peer to peer cryptographic virtual currency based on the
-satoshi client and the litecoin client by charles lee.
+Ccoin integration/staging tree
+================================
+
+NO WEBSITE
+
+Copyright (c) 2009-2014 Bitcoin Developers
+Copyright (c) 2011-2014 CCoin Developers
+Copyright (c) 2015 ccoin 2015 team
+
+What is Ccoin?
+----------------
+
+We (ccoin 2015 team) have obtained updated source of CCoin by beastlymac and Joeswhite (ccoin Developers)
+we have updated with new alert key and forked to freicoin target difficulty change with soruce provided by joeswhite.
+
+We wish to take over project and will give alert key to joeswhite and beastlymac
+
+Finally windows version not compiled, please help us.
 
 
-Who?
-=====
+Ccoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
+ - 1 minute block targets
+ - subsidy halves never
+ - 7.4 billion total coins
 
-Clone changes by Joseph White and Beastlymac
+ - 1000 coins per block
+ - 9 blocks to retarget difficulty using freicoin difficulty retarget window 144 blocks
 
-Logo by captainpugwash
+For more information, as well as an immediately useable, binary version of
+the Ccoin client sofware, there is none. help us build one
 
-CCoin (CCO)
+License
+-------
 
-What?
-====
-scrypt
-7.5 Billion total coins
-1 minute blocks
-1000 coins per block
-2 hour adjustment time frame
-400% max re-adjust
+Ccoin is released under the terms of the MIT license. See `COPYING` for more
+information or see http://opensource.org/licenses/MIT.
 
+Development process
+-------------------
 
+Developers work in their own trees, then submit pull requests when they think
+their feature or bug fix is ready.
 
-Config?
-=====
-To start off the network will not be extremely robust,
-to combat this we have given you the following few lines
-which should get you connected to at least a few peers
+If it is a simple/trivial/non-controversial change, then one of the Ccoin
+development team members simply pulls it.
 
+If it is a *more complicated or potentially controversial* change, then the patch
+submitter will be asked to start a discussion with the devs and community.
 
+The patch will be accepted if there is broad consensus that it is a good thing.
+Developers should expect to rework and resubmit patches if the code doesn't
+match the project's coding conventions (see `doc/coding.txt`) or are
+controversial.
 
-addnode=192.81.212.236
-addnode=50.137.162.155
-addnode=162.216.18.15
-addnode=104.28.24.13
-addnode=31.207.2.106
-addnode=95.96.130.18
-addnode=128.199.189.238
-addnode=62.210.122.161
+The `master` branch is regularly built and tested, but is not guaranteed to be
+completely stable. [Tags](https://github.com/ccoin-project/ccoin/tags) are created
+regularly to indicate new official, stable release versions of Ccoin.
 
-server=1
+Testing
+-------
+NOT AVAILABLE YET
+Testing and code review is the bottleneck for development; we get more pull
+requests than we can review and test. Please be patient and help out, and
+remember this is a security-critical project where any mistake might cost people
+lots of money.
 
-daemon=1
+### Automated Testing
 
+Developers are strongly encouraged to write unit tests for new code, and to
+submit new unit tests for old code.
 
-Anything else scammers?
-=======
-Nah, enjoy CCoin
+Unit tests for the core code are in `src/test/`. To compile and run them:
+
+    cd src; make -f makefile.unix test
+
+Unit tests for the GUI code are in `src/qt/test/`. To compile and run them:
+
+    qmake BITCOIN_QT_TEST=1 -o Makefile.test bitcoin-qt.pro
+    make -f Makefile.test
+    ./ccoin-qt_test
+
